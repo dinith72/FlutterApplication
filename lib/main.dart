@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.amber,
       ),
-     
+
       routes: <String,WidgetBuilder>{
         '/Login' : (BuildContext context) => new Login(),
         '/Settings' : (BuildContext context) => new Settings("Settings page"),
@@ -36,22 +36,52 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-   @override
+
+  bool _married = true;
+  void ismarried(bool stat){
+    setState(() {
+      _married = stat;
+    });
+  }
+  @override
   Widget build(BuildContext context) {
 
+    final ValueChanged<bool> onChanged = null;
+
     return new Scaffold(
-      appBar: new AppBar(
+        appBar: new AppBar(
 
-        title: new Text("Home"),
-        actions: <Widget>[
-          new IconButton(icon: new Icon( Icons.settings), onPressed: () {Navigator.pushNamed(context, '/Settings');}),
-          new IconButton(icon: new Icon( Icons.exit_to_app), onPressed: () {Navigator.pushNamed(context,'/Login');}),
+          title: new Text("Home"),
+          actions: <Widget>[
+            new IconButton(icon: new Icon(Icons.settings), onPressed: () {
+              Navigator.pushNamed(context, '/Settings');
+            }),
+            new IconButton(icon: new Icon(Icons.exit_to_app), onPressed: () {
+              Navigator.pushNamed(context, '/Login');
+            }),
 //          new RaisedButton(onPressed: () {_peopleClicked('button pressed');}),
-        ],
+          ],
 
-      ),
-      body: new Text("This is the Home page"),
+        ),
+        body: new Container(
+            padding: new EdgeInsets.all(32.0),
+            child: new Center(
+                child: new Column(
+                    children: <Widget>[
+                      new Text('home page'),
+                      new Checkbox(value: _married, // the value which mathes with the text box
+                          activeColor: Colors.blue, // color when it is clicked
+                          onChanged: (bool stat){ismarried(stat);} // the onchanged function , this trggers the check box actin when clicked
+
+                      ),
+                    ]
+
+                )
+            )
+
+        )
 
     );
   }
+
 }

@@ -7,6 +7,8 @@ class Settings extends StatelessWidget{
   Settings(String text){
     this.text = text;
   }
+
+  bool _married = false;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -30,11 +32,14 @@ class Settings extends StatelessWidget{
                 child: new Column(
                     children: <Widget>[
                       new Text(text),
-//
+
                     ]
                 )
             )
         )
     );
   }
+
+
+
 }
