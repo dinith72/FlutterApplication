@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:app/Screnns/login.dart';
 import 'package:app/Screnns/Settings.dart';
 import 'package:app/Screnns/switch.dart';
+import 'package:app/Screnns/ListView.dart';
+import 'package:app/Screnns/demo.dart';
 
 void main() => runApp(new MyApp());
 
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
         '/Settings' : (BuildContext context) => new Settings("Settings page"),
         '/Home' : (BuildContext context) => new MyHomePage(),
         '/Switch' :(BuildContext context) => new Switcher(),
+        '/ListViewer' :(BuildContext context) => new ListViewer(),
+        '/Demo' :(BuildContext context) => new Demo()
       },
       home: new MyHomePage(),
     );
@@ -82,8 +86,11 @@ class _MyHomePageState extends State<MyHomePage> {
             new IconButton(icon: new Icon(Icons.print), onPressed: () {
               Navigator.pushNamed(context, '/Switch');
             }),
-            new IconButton(icon: new Icon(Icons.exit_to_app), onPressed: () {
-              Navigator.pushNamed(context, '/Login');
+            new IconButton(icon: new Icon(Icons.adjust), onPressed: () {
+              Navigator.pushNamed(context, '/Demo');
+            }),
+            new IconButton(icon: new Icon(Icons.people), onPressed: () {
+              Navigator.pushNamed(context, '/ListViewer');
             }),
 //          new RaisedButton(onPressed: () {_peopleClicked('button pressed');}),
           ],
