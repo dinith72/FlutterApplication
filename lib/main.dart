@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app/Screnns/login.dart';
 import 'package:app/Screnns/Settings.dart';
+import 'package:app/Screnns/switch.dart';
 
 void main() => runApp(new MyApp());
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       routes: <String,WidgetBuilder>{
         '/Login' : (BuildContext context) => new Login(),
         '/Settings' : (BuildContext context) => new Settings("Settings page"),
-        '/Home' : (BuildContext context) => new MyHomePage()
+        '/Home' : (BuildContext context) => new MyHomePage(),
+        '/Switch' :(BuildContext context) => new Switcher(),
       },
       home: new MyHomePage(),
     );
@@ -38,10 +40,34 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   bool _married = true;
+  int _radioVal = 0;
   void ismarried(bool stat){
     setState(() {
       _married = stat;
     });
+  }
+  void radioValChanged(int val){
+    setState(() {
+      _radioVal = val;
+      print(_radioVal);
+    });
+  }
+  // this function create set of radio buttons
+  List<Widget> makeRadios(){
+    List<Widget> lst = new List<Widget>(); // creating a list of radio buttons
+    for(int i =0;  i < 3;  i++){
+      lst.add( new RadioListTile(
+          value: i,
+          groupValue: _radioVal, // the value of the radio button selected
+          title: new Text('radio $i'), // title of the radio button
+          onChanged: (int val){radioValChanged(val);}, // on changed action listener
+          secondary: new Icon(Icons.print), // custom icon can be set
+
+          )
+      );
+
+    }
+    return lst;
   }
   @override
   Widget build(BuildContext context) {
@@ -53,8 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
           title: new Text("Home"),
           actions: <Widget>[
-            new IconButton(icon: new Icon(Icons.settings), onPressed: () {
-              Navigator.pushNamed(context, '/Settings');
+            new IconButton(icon: new Icon(Icons.print), onPressed: () {
+              Navigator.pushNamed(context, '/Switch');
             }),
             new IconButton(icon: new Icon(Icons.exit_to_app), onPressed: () {
               Navigator.pushNamed(context, '/Login');
@@ -74,8 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           onChanged: (bool stat){ismarried(stat);} // the onchanged function , this trggers the check box actin when clicked
 
                       ),
-                    ]
+                      new Column(
+                        children:makeRadios() , // radio buttons should be sent as list , crated in seperate function
+                      )
 
+                    ]
                 )
             )
 
