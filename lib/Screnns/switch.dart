@@ -3,7 +3,7 @@ import 'package:app/main.dart';
 
 
 class Switcher extends  StatefulWidget {
-   @override
+  @override
   _Switcher createState() => new _Switcher(); // create private sub class
 
 }
@@ -15,7 +15,7 @@ class _Switcher extends State<Switcher>{ // extened as state widget
   String _cmbVal = '';
   @override
   void initState() { // initialising the drop down menu
-    
+
     names.addAll(['dinith','chamaka','chathura','sidath']); //
     _cmbVal = names[0]; // assigning the first element of the list as the selected element
   }
@@ -55,6 +55,25 @@ class _Switcher extends State<Switcher>{ // extened as state widget
 //
           ],
         ),
+        drawer: new Drawer(
+            child: new Container(
+              padding: new EdgeInsets.all(20.0),
+              child: new Column(
+                children: <Widget>[
+                  new FlatButton.icon(
+                      onPressed: (){ Navigator.pushNamed(context, '/Switch');},
+                      icon: new Icon(Icons.list),
+                      label: new Text('switch')
+                  ),
+                  new FlatButton.icon(
+                      onPressed: (){ Navigator.pushNamed(context, '/Settings');},
+                      icon: new Icon(Icons.settings),
+                      label: new Text('Settings')
+                  ),
+//
+                ],
+              ),
+            )),
         body: new Container(
           padding: new EdgeInsets.all(32.0),
           child: new Center(
@@ -64,7 +83,7 @@ class _Switcher extends State<Switcher>{ // extened as state widget
                         // also action is fired event the text associating with the switch is clicked
                         title: new Text('switch'),
                         onChanged: (bool val){switchOnClick(val);}// method to fire the switch action
-                        ),
+                    ),
                     new Text('the slider values is ' +_sliVal.round().toString()),
                     new Slider(value: _sliVal, min: 0.0 , max: 100.0, onChanged: (val){onchagedSlider(val);}), // slider value we can set by max and min
                     new LinearProgressIndicator( value: _sliVal*0.01), // the value for the leaner progress bar should be between 0 to 1

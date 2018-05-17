@@ -41,7 +41,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+  class _MyHomePageState extends State<MyHomePage>  with WidgetsBindingObserver{   // extend with the widget bindng observer
 
   bool _married = true;
   int _radioVal = 0;
@@ -56,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
       print(_radioVal);
     });
   }
-  // this function create set of radio buttons
+
+  //this function create set of radio buttons
   List<Widget> makeRadios(){
     List<Widget> lst = new List<Widget>(); // creating a list of radio buttons
     for(int i =0;  i < 3;  i++){
@@ -96,6 +97,28 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
 
         ),
+          // scaffold has catagory named drawer , the following code should be created there
+          drawer: new Drawer( // creating a drawer
+            child: new Container(
+                padding: new EdgeInsets.all(20.0),
+               child: new Column(
+                 children: <Widget>[
+//                  adding some drawer tiles
+                   new FlatButton.icon(
+                       onPressed: (){ Navigator.pushNamed(context, '/Demo');},
+                       icon: new Icon(Icons.list),
+                       label: new Text('Demo')
+                   ),
+                   new FlatButton.icon(
+                       onPressed: (){ Navigator.pushNamed(context, '/Settings');},
+                       icon: new Icon(Icons.settings),
+                       label: new Text('Settings')
+                   ),
+//
+                 ],
+               ),
+            ),
+          ),
         body: new Container(
             padding: new EdgeInsets.all(32.0),
             child: new Center(
@@ -118,6 +141,49 @@ class _MyHomePageState extends State<MyHomePage> {
         )
 
     );
+  }
+
+
+  // the below 3 methods should be overridden
+  @override
+  void initState() {
+    print('init state');
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+
+  }
+
+  @override
+  void dispose() {
+    print('dispose');
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {  // when app lifecycle state is changed
+    print('state ' + state.toString());
+    switch(state){
+      case AppLifecycleState.inactive: // when another app is open , closing this app
+        print('inactive'); //
+        break;
+
+      case AppLifecycleState.paused: // when another app is open , closing this app
+        print('paused');
+        break;
+
+      case AppLifecycleState.resumed:
+        print('suspended');
+        break;
+
+      case AppLifecycleState.suspending:
+        print('suspending');
+        break;
+
+
+
+
+    }
   }
 
 }
