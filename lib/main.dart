@@ -3,7 +3,8 @@ import 'package:app/Screnns/login.dart';
 import 'package:app/Screnns/Settings.dart';
 import 'package:app/Screnns/switch.dart';
 import 'package:app/Screnns/ListView.dart';
-import 'package:app/Screnns/demo.dart';
+//import 'package:app/Screnns/demo.dart';
+import 'package:app/Screnns/testdb.dart';
 
 void main() => runApp(new MyApp());
 
@@ -23,7 +24,9 @@ class MyApp extends StatelessWidget {
         '/Home' : (BuildContext context) => new MyHomePage(),
         '/Switch' :(BuildContext context) => new Switcher(),
         '/ListViewer' :(BuildContext context) => new ListViewer(),
-        '/Demo' :(BuildContext context) => new Demo()
+//        '/Demo' :(BuildContext context) => new Demo(),
+//        '/Demo' : (BuildContext context) => new Demo(),
+        '/TestDb' : (BuildContext context) => new Testdb(),
       },
       home: new MyHomePage(),
     );
@@ -88,7 +91,7 @@ class MyHomePage extends StatefulWidget {
               Navigator.pushNamed(context, '/Switch');
             }),
             new IconButton(icon: new Icon(Icons.adjust), onPressed: () {
-              Navigator.pushNamed(context, '/Demo');
+              Navigator.pushNamed(context, '/TestDb');
             }),
             new IconButton(icon: new Icon(Icons.people), onPressed: () {
               Navigator.pushNamed(context, '/ListViewer');

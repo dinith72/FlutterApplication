@@ -212,6 +212,13 @@
             </list>
           </value>
         </entry>
+        <entry key="options_file">
+          <value>
+            <list>
+              <option value="C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/options_file-0.11.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="package_config">
           <value>
             <list>
@@ -314,6 +321,13 @@
           <value>
             <list>
               <option value="C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.4.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="sqljocky5">
+          <value>
+            <list>
+              <option value="C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/sqljocky5-1.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -425,6 +439,7 @@
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/mime-0.9.6/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/multi_server_socket-1.0.1/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/node_preamble-1.4.0/lib" />
+      <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/options_file-0.11.0/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-1.0.3/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/package_resolver-1.0.2/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.5.1/lib" />
@@ -439,6 +454,7 @@
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/source_map_stack_trace-1.1.4/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/source_maps-0.10.4/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.4.0/lib" />
+      <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/sqljocky5-1.0.0/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.2/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-1.6.4/lib" />
       <root url="file://C:/Program Files (x86)/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.2/lib" />

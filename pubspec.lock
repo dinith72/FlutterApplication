@@ -207,6 +207,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.0"
+  options_file:
+    dependency: "direct main"
+    description:
+      name: options_file
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.11.0"
   package_config:
     dependency: transitive
     description:
@@ -310,6 +317,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.0"
+  sqljocky5:
+    dependency: "direct main"
+    description:
+      name: sqljocky5
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   stack_trace:
     dependency: transitive
     description:
